@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>test</title>
+	<link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+	<link rel="stylesheet"  data-th-href="@{'/css/output.css'}">
+</head>
+<body>
+	<div class="container bg-slate-200 w-1/2 p-4 mx-auto mt-4 flex flex-col justify-center items-center space-y-6">
+	<h1 class="text-2xl" data-th-text=${name}></h1>
+	
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat facere, libero vel soluta consectetur ipsam consequuntur minima id itaque, totam placeat molestiae fugiat similique mollitia doloribus magnam, consequatur voluptate?</p>
+    <div class="container flex justify-center">
+	<button class="px-3 py-3 rounded bg-blue-400 text-white hover:bg-blue-800">Submit</button>
+    </div>
+      </div>
+      <!-- flow bite card -->
+       
+	  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+</body>
+</html>

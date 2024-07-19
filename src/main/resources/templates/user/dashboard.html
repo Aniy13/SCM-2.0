@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: parent(~{::#content},~{::title}, ~{::script})}" >
+<head>
+    <title data-th-text="${loggedInuser.name+' | SCM'}" ></title>
+</head>
+<body>
+
+    
+    
+   <div  id="content" >
+    <div th:if="${loggedInuser}">
+        <div data-th-replace="user/sidebar :: sidebar"></div>
+        </div>
+
+   
+    <div class="pl-64 pt-16">
+    <div class="container mx-auto">
+        <!-- User Information -->
+        <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Welcome, <span th:text="${loggedInuser.name}">User</span>!</h2>
+            <p class="text-gray-700 dark:text-gray-300">Email: <span th:text="${loggedInuser.email}">user@example.com</span></p>
+            <p class="text-gray-700 dark:text-gray-300">Member since: 01 Jan 2021</p>
+        </div>
+        
+        <!-- Recent Contacts -->
+        <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Recent Contacts</h2>
+            <table class="min-w-full bg-white dark:bg-gray-800">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b text-gray-900 dark:text-gray-200">Name</th>
+                        <th class="py-2 px-4 border-b text-gray-900 dark:text-gray-200">Email</th>
+                        <th class="py-2 px-4 border-b text-gray-900 dark:text-gray-200">Phone</th>
+                        <th class="py-2 px-4 border-b text-gray-900 dark:text-gray-200">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="contact : ${contacts}">
+                        <td class="py-2 px-4 border-b text-gray-900 dark:text-gray-300" th:text="${contact.name}">John Doe</td>
+                        <td class="py-2 px-4 border-b text-gray-900 dark:text-gray-300" th:text="${contact.email}">john@example.com</td>
+                        <td class="py-2 px-4 border-b text-gray-900 dark:text-gray-300" th:text="${contact.phone}">123-456-7890</td>
+                        <td class="py-2 px-4 border-b">
+                            <button class="text-blue-500 dark:text-blue-400 hover:underline">View</button>
+                            <button class="text-red-500 dark:text-red-400 hover:underline ml-4">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Additional Sections -->
+        <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Other Features</h2>
+            <p class="text-gray-700 dark:text-gray-300">More content can be added here...</p>
+        </div>
+    </div>
+</div>
+
+
+</div>
+</body>
+</html>

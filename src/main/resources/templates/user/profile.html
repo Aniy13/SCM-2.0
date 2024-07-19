@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: parent(~{::#content},~{::title}, ~{::script})}" >
+<head>
+    <title data-th-text="${loggedInuser.name+' | SCM'}" ></title>
+</head>
+<body>
+
+    
+    
+   <div  id="content" >
+    <div th:if="${loggedInuser}">
+        <div data-th-replace="user/sidebar :: sidebar"></div>
+        </div>
+
+   
+    <div  class="sm:pl-64 pt-20">
+        <h1 class="text-5xl">This is Profile Page </h1>
+    </div>
+
+</div>
+</body>
+</html>
